@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/10.0.2-internal"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.TermsController"
+      fx:id="rootPane"
+      styleClass="window"
+      prefHeight="680.0" prefWidth="780.0">
+
+    <HBox fx:id="titleBar" alignment="CENTER_LEFT" spacing="10.0"
+          styleClass="title-bar"
+          prefHeight="42.0" minHeight="42.0" maxHeight="42.0"
+          onMouseDragged="#handleWindowDragged" onMousePressed="#handleWindowPressed">
+        <padding>
+            <Insets left="12.0" right="0.0" top="0.0" bottom="0.0" />
+        </padding>
+
+        <ImageView fitWidth="26.0" fitHeight="26.0" preserveRatio="true" smooth="true" styleClass="app-icon">
+            <image>
+                <Image url="@../image/appicon.png" />
+            </image>
+        </ImageView>
+
+        <Label text="Insait Invoice Calc" styleClass="app-title" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Button fx:id="minimizeButton" mnemonicParsing="false" onAction="#minimizeWindow"
+                styleClass="window-button" prefWidth="46.0" prefHeight="42.0"
+                contentDisplay="GRAPHIC_ONLY" text="Minimize" focusTraversable="false">
+            <graphic>
+                <ImageView fitWidth="28.0" fitHeight="28.0" preserveRatio="true" smooth="true">
+                    <image>
+                        <Image url="@../image/MinButton.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button fx:id="closeButton" mnemonicParsing="false" onAction="#closeWindow"
+                styleClass="window-button" prefWidth="46.0" prefHeight="42.0"
+                contentDisplay="GRAPHIC_ONLY" text="Close" focusTraversable="false">
+            <graphic>
+                <ImageView fitWidth="28.0" fitHeight="28.0" preserveRatio="true" smooth="true">
+                    <image>
+                        <Image url="@../image/CloseButton.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+        <content>
+            <VBox spacing="16.0" styleClass="card">
+                <padding>
+                    <Insets bottom="22.0" left="30.0" right="30.0" top="22.0" />
+                </padding>
+
+                <VBox alignment="CENTER_LEFT" spacing="2.0">
+                    <Label text="Insait Invoice Calc" styleClass="heading" />
+                    <Label text="Terms of Use and Licence Agreement" styleClass="caption" />
+                </VBox>
+
+                <Label text="This Licence Agreement is a legal agreement between you and the publisher of Insait Invoice Calc, an independently developed desktop application. Please read it carefully before you install, purchase or use the application. By using the application you accept the terms of this agreement. If you do not agree with any part of it, do not use the application and uninstall it from your device." styleClass="legal-intro" wrapText="true" />
+
+                <GridPane hgap="14.0" vgap="0.0" maxWidth="Infinity" styleClass="legal">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="36.0" halignment="RIGHT" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="400.0" />
+                    </columnConstraints>
+
+                    <Label text="1" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label text="Licence Grant" styleClass="legal-heading" />
+                        <Label text="Subject to your compliance with this agreement, the publisher grants you a limited, personal, non-exclusive, non-transferable and revocable licence to install and use the application on the devices you own or control, and to use it only within the agreed operational framework of your business." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="2" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label text="Scope of Use" styleClass="legal-heading" />
+                        <Label text="The application is provided for the calculation of final prices, including unit prices, quantities, customer discounts and value added tax. You may not make the application available to third parties, resell access to it or integrate it into a service offered to third parties without a separate written agreement." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="3" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label text="Restrictions" styleClass="legal-heading" />
+                        <Label text="You agree not to copy, reproduce, republish, sublicense, rent, lease or distribute the application or any part of it, not to modify, adapt, translate, decompile or disassemble it, not to create derivative works from it, and not to remove, alter or obscure any copyright notice, trade mark or other proprietary notice contained in it." styleClass="legal-body" wrapText="true" />
+                        <Label text="Reverse engineering for interoperability is only permitted to the extent that it is expressly allowed by mandatory applicable law and only where the relevant information is not otherwise available." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="4" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label text="Ownership and Intellectual Property" styleClass="legal-heading" />
+                        <Label text="The application, including its user interface, design, graphics, code, documentation, trade marks and logos, remains the exclusive property of its author and licensors. Nothing in this agreement transfers any ownership or intellectual property right to you." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="5" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <Label text="Purchase, Prices and Taxes" styleClass="legal-heading" />
+                        <Label text="The application is distributed through the Microsoft Store. All prices, taxes, invoices and refunds are handled exclusively by the Microsoft Store under its own terms and refund policy. Payments for the application are not processed by the author of the application." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="6" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                        <Label text="Third-Party Components" styleClass="legal-heading" />
+                        <Label text="The application may contain third-party components that are licensed under separate terms. Those terms are made available together with the respective components and apply in addition to this agreement." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="7" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                        <Label text="Feedback" styleClass="legal-heading" />
+                        <Label text="If you send feedback, suggestions or ideas to the author of the application, you grant it a perpetual, worldwide, irrevocable, royalty-free and transferable licence to use that feedback without restriction and without any obligation to you." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="8" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                        <Label text="Updates and Changes" styleClass="legal-heading" />
+                        <Label text="The author of the application may update the application at any time in order to correct defects, improve performance or adapt it to new operating system versions. Updates are delivered through the Microsoft Store and may change or extend the described functionality. This agreement may also be revised; the revised version applies as soon as it is published in the application." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="9" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                        <Label text="Disclaimer of Warranties" styleClass="legal-heading" />
+                        <Label text="To the maximum extent permitted by law, the application is provided as is and as available, without warranties of any kind, whether express, implied or statutory, including merchantability, fitness for a particular purpose, accuracy and non-infringement. The author does not warrant that the application will be uninterrupted, error-free or free of harmful components." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="10" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                        <Label text="Limitation of Liability" styleClass="legal-heading" />
+                        <Label text="To the maximum extent permitted by law, the author of the application is not liable for indirect, incidental, special, consequential or punitive damages, nor for loss of profit, revenue, data, goodwill or business opportunities, arising from the use of or the inability to use the application. Where liability cannot be excluded by law, it is limited to the amount you paid for the application." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="11" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                        <Label text="Indemnification" styleClass="legal-heading" />
+                        <Label text="You agree to indemnify and hold harmless the author of the application against all claims, demands, losses and expenses, including reasonable legal fees, arising from your misuse of the application or from your breach of this agreement." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="12" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                        <Label text="Termination" styleClass="legal-heading" />
+                        <Label text="This agreement applies until it is terminated. It terminates automatically if you breach any of its terms. After termination you must cease all use of the application and uninstall it. Provisions that are by their nature intended to survive termination, such as ownership, warranties, liability and indemnification, remain in effect." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="13" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+                    <VBox spacing="6.0" styleClass="legal-section" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                        <Label text="Governing Law" styleClass="legal-heading" />
+                        <Label text="This agreement is governed by the laws of the Federal Republic of Germany, excluding its conflict of law rules and the United Nations Convention on Contracts for the International Sale of Goods. Mandatory consumer protection provisions of your country of residence remain unaffected." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+
+                    <Label text="14" styleClass="legal-number" GridPane.columnIndex="0" GridPane.rowIndex="13" />
+                    <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                        <Label text="Contact" styleClass="legal-heading" />
+                        <Label text="Questions about this agreement can be directed to the author of the application using the contact details published in the Microsoft Store listing of the application." styleClass="legal-body" wrapText="true" />
+                    </VBox>
+                </GridPane>
+            </VBox>
+        </content>
+    </ScrollPane>
+
+    <HBox alignment="CENTER_LEFT" spacing="16.0" styleClass="window" prefHeight="64.0">
+        <padding>
+            <Insets bottom="14.0" left="30.0" right="30.0" top="8.0" />
+        </padding>
+        <Label text="Version 1.0.0  -  Last updated 29 September 2026" styleClass="legal-note" HBox.hgrow="ALWAYS" />
+        <Button fx:id="btnClose" mnemonicParsing="false" onAction="#closeWindow" styleClass="btn-primary" text="Understood" />
+    </HBox>
+</VBox>

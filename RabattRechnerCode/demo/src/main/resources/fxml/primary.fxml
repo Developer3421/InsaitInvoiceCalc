@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.FXMLController"
+            styleClass="window"
+            prefHeight="800.0" prefWidth="940.0">
+
+    <top>
+        <HBox fx:id="titleBar" alignment="CENTER_LEFT" spacing="10.0"
+              styleClass="title-bar"
+              prefHeight="42.0" minHeight="42.0" maxHeight="42.0"
+              onMouseDragged="#handleWindowDragged" onMousePressed="#handleWindowPressed">
+            <padding>
+                <Insets left="12.0" right="0.0" top="0.0" bottom="0.0" />
+            </padding>
+
+            <ImageView fitWidth="26.0" fitHeight="26.0" preserveRatio="true" smooth="true" styleClass="app-icon">
+                <image>
+                    <Image url="@../image/appicon.png" />
+                </image>
+            </ImageView>
+
+            <Label text="Insait Invoice Calc" styleClass="app-title" />
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Button fx:id="termsButton" mnemonicParsing="false" onAction="#showTerms"
+                    styleClass="window-button" prefWidth="46.0" prefHeight="42.0"
+                    contentDisplay="GRAPHIC_ONLY" text="Terms of Use" focusTraversable="false">
+                <tooltip>
+                    <Tooltip text="Terms of Use" />
+                </tooltip>
+                <graphic>
+                    <ImageView fitWidth="28.0" fitHeight="28.0" preserveRatio="true" smooth="true">
+                        <image>
+                            <Image url="@../image/icon1.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="minimizeButton" mnemonicParsing="false" onAction="#minimizeWindow"
+                    styleClass="window-button" prefWidth="46.0" prefHeight="42.0"
+                    contentDisplay="GRAPHIC_ONLY" text="Minimize" focusTraversable="false">
+                <graphic>
+                    <ImageView fitWidth="28.0" fitHeight="28.0" preserveRatio="true" smooth="true">
+                        <image>
+                            <Image url="@../image/MinButton.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="closeButton" mnemonicParsing="false" onAction="#closeWindow"
+                    styleClass="window-button" prefWidth="46.0" prefHeight="42.0"
+                    contentDisplay="GRAPHIC_ONLY" text="Close" focusTraversable="false">
+                <graphic>
+                    <ImageView fitWidth="28.0" fitHeight="28.0" preserveRatio="true" smooth="true">
+                        <image>
+                            <Image url="@../image/CloseButton.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="scroll-pane">
+            <content>
+                <VBox alignment="TOP_CENTER" spacing="10.0" styleClass="window">
+                    <padding>
+                        <Insets bottom="18.0" left="52.0" right="52.0" top="16.0" />
+                    </padding>
+
+                    <VBox alignment="CENTER_LEFT" spacing="2.0" maxWidth="680.0" prefWidth="680.0">
+                        <Label text="Final Price Calculator" styleClass="heading" />
+                        <Label text="Final price of a batch: unit price x quantity, discount and VAT" styleClass="caption" />
+                    </VBox>
+
+                    <VBox spacing="8.0" styleClass="card" maxWidth="680.0" prefWidth="680.0">
+                        <padding>
+                            <Insets bottom="14.0" left="24.0" right="24.0" top="12.0" />
+                        </padding>
+
+                        <Label text="Input" styleClass="section-title" />
+
+                        <GridPane hgap="18.0" vgap="9.0" maxWidth="Infinity">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="RIGHT" minWidth="210.0" />
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="150.0" />
+                            </columnConstraints>
+
+                            <Label text="Unit price (net):" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField fx:id="txtEinzelpreis" onAction="#btnClickAction" promptText="e.g. 49.99" styleClass="input" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                            <Label text="Quantity (units):" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <TextField fx:id="txtMenge" onAction="#btnClickAction" promptText="e.g. 250" styleClass="input" HBox.hgrow="ALWAYS" />
+                                <Button mnemonicParsing="false" onAction="#mengeVerringern" styleClass="stepper" text="−" />
+                                <Button mnemonicParsing="false" onAction="#mengeErhoehen" styleClass="stepper" text="+" />
+                            </HBox>
+
+                            <Label text="Customer discount (%):" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <TextField fx:id="txtEchterRabatt" onAction="#btnClickAction" promptText="e.g. 20" styleClass="input" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                            <Label text="VAT (%):" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <TextField fx:id="txtSteuern" onAction="#btnClickAction" promptText="e.g. 19" styleClass="input" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        </GridPane>
+                    </VBox>
+
+                    <HBox alignment="CENTER" spacing="12.0">
+                        <Button mnemonicParsing="false" onAction="#btnClickAction" styleClass="btn-primary" text="Calculate" />
+                        <Button mnemonicParsing="false" onAction="#resetAction" styleClass="btn-secondary" text="Reset" />
+                    </HBox>
+
+                    <VBox spacing="4.0" styleClass="display" maxWidth="680.0" prefWidth="680.0">
+                        <padding>
+                            <Insets bottom="14.0" left="20.0" right="20.0" top="12.0" />
+                        </padding>
+                        <Label text="Total for the batch (gross)" styleClass="display-caption" maxWidth="Infinity" alignment="CENTER_RIGHT" />
+                        <Label fx:id="lblEndpreis" text="–" styleClass="display-value" maxWidth="Infinity" alignment="CENTER_RIGHT" />
+                        <HBox alignment="CENTER_RIGHT" spacing="6.0">
+                            <Label text="per unit:" styleClass="display-note" />
+                            <Label fx:id="lblEndpreisJeStueck" text="–" styleClass="display-note" />
+                        </HBox>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="8.0" styleClass="card" maxWidth="680.0" prefWidth="680.0">
+                        <padding>
+                            <Insets bottom="14.0" left="24.0" right="24.0" top="12.0" />
+                        </padding>
+                        <Label text="Invoice summary of the batch" maxWidth="Infinity" styleClass="section-title" />
+                        <GridPane hgap="20.0" vgap="6.0" maxWidth="Infinity" prefWidth="620.0">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="RIGHT" minWidth="230.0" />
+                                <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="150.0" />
+                            </columnConstraints>
+                            <Label text="Unit price (net)" styleClass="row-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <Label fx:id="lblEinzelpreisWert" styleClass="row-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <Label text="Quantity" styleClass="row-label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <Label fx:id="lblMengeWert" styleClass="row-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label text="Subtotal (net)" styleClass="row-label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <Label fx:id="lblZwischensumme" styleClass="row-value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <Label text="Discount" styleClass="row-label" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <Label fx:id="lblRabattBetrag" styleClass="row-value-negative" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            <Label text="Subtotal after discount" styleClass="row-label" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                            <Label fx:id="lblBasisNachRabatt" styleClass="row-value" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            <Label text="VAT" styleClass="row-label" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                            <Label fx:id="lblSteuerBetrag" styleClass="row-value-positive" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        </GridPane>
+                        <Label fx:id="lblOut" styleClass="error-text" visible="false" managed="false" wrapText="true" maxWidth="Infinity" />
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="16.0" styleClass="status-bar" prefHeight="30.0">
+            <padding>
+                <Insets bottom="7.0" left="16.0" right="16.0" top="7.0" />
+            </padding>
+            <Label fx:id="lblStatus" styleClass="status-text" text="Ready" HBox.hgrow="ALWAYS" />
+            <Label styleClass="status-hint" text="All amounts rounded to cents" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,22 @@
+# Build output
+target/
+**/target/
+*.class
+*.jar
+RabattRechnerCode/InsaitInvoiceCalc/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Excluded from the repository
+VCalc Java/
+*.msix

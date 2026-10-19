@@ -1,0 +1,341 @@
+/*
+ Insait Invoice Calc - application theme.
+ The visual language is shared with the VCalc project: cream window background,
+ grey window chrome, cards on a light cream surface and the purple/orange accents.
+ */
+
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #404040;
+}
+
+/* ================= Window chrome ================= */
+
+.window {
+    -fx-background-color: #F5E6D3;
+}
+
+.title-bar {
+    -fx-background-color: linear-gradient(to bottom right, #E0E0E0 0%, #D0D0D0 30%, #C5C5C5 70%, #C0C0C0 100%);
+}
+
+.app-icon {
+    -fx-opacity: 0.95;
+}
+
+.app-title {
+    -fx-text-fill: #404040;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.app-subtitle {
+    -fx-text-fill: #606060;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+}
+
+.window-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+    -fx-cursor: hand;
+}
+
+.window-button:hover {
+    -fx-background-color: rgba(125, 42, 232, 0.18);
+}
+
+.window-button:pressed {
+    -fx-background-color: rgba(125, 42, 232, 0.32);
+}
+
+/* ================= Cards and text ================= */
+
+.card {
+    -fx-background-color: #FDF7EF;
+    -fx-border-color: #E8D5B7;
+    -fx-border-width: 1;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+.heading {
+    -fx-text-fill: #404040;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.caption {
+    -fx-text-fill: #606060;
+    -fx-font-size: 12px;
+}
+
+.section-title {
+    -fx-text-fill: #404040;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.field-label {
+    -fx-text-fill: #404040;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.body-text {
+    -fx-text-fill: #404040;
+    -fx-font-size: 14px;
+    -fx-line-spacing: 5px;
+}
+
+.row-label {
+    -fx-text-fill: #606060;
+    -fx-font-size: 13px;
+}
+
+.row-value {
+    -fx-text-fill: #404040;
+    -fx-font-size: 13px;
+}
+
+.row-value-negative {
+    -fx-text-fill: #C0392B;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.row-value-positive {
+    -fx-text-fill: #1E8449;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.error-text {
+    -fx-text-fill: #C0392B;
+    -fx-font-size: 13px;
+}
+
+/* ================= Display ================= */
+
+.display {
+    -fx-background-color: #FDF7EF;
+    -fx-border-color: #E8D5B7;
+    -fx-border-width: 1;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+.display-caption {
+    -fx-text-fill: #606060;
+    -fx-font-size: 13px;
+}
+
+.display-value {
+    -fx-text-fill: #404040;
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+}
+
+.display-note {
+    -fx-text-fill: #606060;
+    -fx-font-size: 13px;
+}
+
+/* ================= Inputs ================= */
+
+.input {
+    -fx-background-color: #FDF7EF;
+    -fx-border-color: #E8D5B7;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 7 12;
+    -fx-font-size: 14px;
+    -fx-text-fill: #404040;
+    -fx-prompt-text-fill: #A79C8C;
+}
+
+.input:focused {
+    -fx-border-color: #7D2AE8;
+    -fx-border-width: 2;
+}
+
+.input:focused .prompt-text {
+    -fx-fill: transparent;
+}
+
+/* ================= Buttons ================= */
+
+.button {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-cursor: hand;
+}
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to bottom right, #FF8C00 0%, #7D2AE8 100%);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 32;
+    -fx-background-radius: 10;
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom right, #FF9C2A 0%, #8E45F0 100%);
+}
+
+.btn-primary:pressed {
+    -fx-background-color: linear-gradient(to bottom right, #E07C00 0%, #6C22C8 100%);
+}
+
+.btn-accent {
+    -fx-background-color: #7D2AE8;
+    -fx-text-fill: white;
+    -fx-border-color: #FF8C00;
+    -fx-border-width: 2;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 16;
+}
+
+.btn-accent:hover {
+    -fx-background-color: #8E45F0;
+}
+
+.btn-accent:pressed {
+    -fx-background-color: #6C22C8;
+}
+
+.btn-secondary {
+    -fx-background-color: #FDF7EF;
+    -fx-text-fill: #404040;
+    -fx-border-color: #E8D5B7;
+    -fx-border-width: 1;
+    -fx-font-size: 14px;
+    -fx-padding: 10 28;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #F7EBD9;
+    -fx-border-color: #D8BD94;
+}
+
+.stepper {
+    -fx-background-color: #FDF7EF;
+    -fx-text-fill: #404040;
+    -fx-border-color: #E8D5B7;
+    -fx-border-width: 1;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 14;
+}
+
+.stepper:hover {
+    -fx-background-color: #7D2AE8;
+    -fx-text-fill: white;
+    -fx-border-color: #FF8C00;
+    -fx-border-width: 2;
+}
+
+/* ================= Licence document ================= */
+
+.legal {
+    -fx-background-color: transparent;
+}
+
+.legal-intro {
+    -fx-text-fill: #404040;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 5px;
+}
+
+.legal-number {
+    -fx-text-fill: #FF8C00;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 1 0 0 0;
+}
+
+.legal-section {
+    -fx-border-color: transparent transparent #E8D5B7 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 14 0;
+}
+
+.legal-heading {
+    -fx-text-fill: #404040;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.legal-body {
+    -fx-text-fill: #404040;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 5px;
+}
+
+.legal-note {
+    -fx-text-fill: #606060;
+    -fx-font-size: 12px;
+}
+
+/* ================= Tooltip ================= */
+
+.tooltip {
+    -fx-background-color: #404040;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-background-radius: 6;
+    -fx-padding: 5 9;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 2);
+}
+
+/* ================= Status bar ================= */
+
+.status-bar {
+    -fx-background-color: linear-gradient(to bottom right, #7D2AE8 0%, #5B1FB0 100%);
+}
+
+.status-text {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+
+.status-hint {
+    -fx-text-fill: #E3D5F6;
+    -fx-font-size: 12px;
+}
+
+/* ================= Scroll pane ================= */
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #D9BE93;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #7D2AE8;
+}
