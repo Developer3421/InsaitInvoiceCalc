@@ -20,8 +20,8 @@ price of a batch including discount and VAT.
 
 ## Tech stack
 
-- Language: Java 11
-- UI: JavaFX
+- Language: Java 26
+- UI: JavaFX 25
 - Build tool: Maven
 - Packaging: `jpackage` (self-contained Windows app)
 

@@ -24,14 +24,14 @@ The design follows the visual language of the VCalc project: cream window backgr
 
 ## Project overview
 
-- Language: Java 11
-- UI framework: JavaFX
+- Language: Java 26
+- UI framework: JavaFX 25
 - Build tool: Maven
 - Packaging: Java `jpackage` for a self-contained Windows app
 
 ## Requirements
 
-- Java 11 or 17 JDK installed
+- Java 26 JDK installed
 - Maven installed
 - Windows 10/11 for the native EXE version
 
