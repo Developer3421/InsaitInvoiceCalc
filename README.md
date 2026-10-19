@@ -1,39 +1,39 @@
 # Insait Invoice Calc
 
-> **Навчальний проєкт.** Це мій навчальний проєкт, виконаний у рамках професійного
-> навчання. Він створений для практики та демонстрації навичок розробки, а не для
-> комерційного використання.
+> **Training project.** This is my training project, created as part of a
+> professional education program. It is built for practice and to demonstrate
+> development skills, not for commercial use.
 
-## Про проєкт
+## About
 
-Insait Invoice Calc — це десктопний застосунок на JavaFX для розрахунку підсумкової
-ціни партії товару з урахуванням знижки клієнта та ПДВ.
+Insait Invoice Calc is a JavaFX desktop application for calculating the final
+price of a batch including discount and VAT.
 
-**Що вміє застосунок:**
+**Features:**
 
-- Розрахунок підсумку партії: ціна за одиницю × кількість
-- Знижка клієнта у відсотках на всю партію (необов'язково)
-- ПДВ у відсотках від суми після знижки
-- Зведення рахунку: підсумок, сума знижки, сума податку, підсумкова ціна партії та ціна за одиницю
-- Обчислення за кнопкою `Calculate` або клавішею `Enter`
-- Суми у копійках, приймаються і кома, і крапка як десятковий роздільник
+- Net subtotal of a batch: unit price × quantity
+- Customer discount in percent, applied to the whole batch (optional)
+- VAT in percent, applied to the amount after the discount
+- Invoice summary with subtotal, discount amount, tax amount, batch total and price per unit
+- Calculation runs on the `Calculate` button or the `Enter` key
+- Amounts in cents; both comma and dot are accepted as the decimal separator
 
-## Технології
+## Tech stack
 
-- Мова: Java 11
+- Language: Java 11
 - UI: JavaFX
-- Збірка: Maven
-- Пакування: `jpackage` (самодостатній Windows-застосунок)
+- Build tool: Maven
+- Packaging: `jpackage` (self-contained Windows app)
 
-## Запуск і збірка
+## Build and run
 
-Детальні інструкції дивіться в [`RabattRechnerCode/demo/README.md`](RabattRechnerCode/demo/README.md).
-Коротко:
+See [`RabattRechnerCode/demo/README.md`](RabattRechnerCode/demo/README.md) for full instructions.
+In short:
 
 ```powershell
 mvn clean package -DskipTests
 ```
 
-## Структура
+## Structure
 
-- `RabattRechnerCode/demo/` — вихідний код застосунку
+- `RabattRechnerCode/demo/` — application source code
